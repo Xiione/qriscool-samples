@@ -1,0 +1,22 @@
+{
+  "name": "qriscool-samples",
+  "version": "1.0.0",
+  "description": "",
+  "exports": {
+    ".": "./index.js"
+  },
+  "scripts": {
+    "build": "tsc ./index.ts --target es2022 --module es2022 --moduleResolution nodenext --declaration true --declarationDir ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "canvas": "^3.0.1",
+    "jsqr-es6": "github:Xiione/jsQR"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "ts-node": "^10.9.2"
+  }
+}

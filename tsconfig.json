@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "bundler",
+        "module": "esnext",
+        "noEmit": true,
+        "target": "esnext",
+        "verbatimModuleSyntax": true,
+        "isolatedModules": true,
+        "allowJs": true,
+        "checkJs": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "strict": true,
+        "moduleDetection": "force"
+    }
+}
