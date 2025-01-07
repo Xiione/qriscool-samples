@@ -23,6 +23,7 @@ async function generateMetadata() {
   const imagesDir = path.join(__dirname, ".", "samples");
   const files = fs.readdirSync(imagesDir);
   const metadata = {};
+  const failed = [];
 
   for (const file of files) {
     if (!file.match(/\.(jpg|png|jpeg|gif)$/i)) continue;
@@ -48,6 +49,7 @@ async function generateMetadata() {
     });
     if (!res) {
       console.error(`File ${basename} failed to scan`);
+      failed.push(basename);
       continue;
     }
 
@@ -58,7 +60,10 @@ async function generateMetadata() {
   const outputPath = path.join(__dirname, ".", "ecLevels.json");
   const data = JSON.stringify(metadata, null, 2);
   fs.writeFileSync(outputPath, data);
-  console.log(`Finished generating ${files.length} images' data`);
+  console.log(`Finished generating ${Object.keys(metadata).length} images' data`);
+  if (failed.length > 0) {
+    console.error(`${failed.length} images failed to scan: ${failed}`)
+  }
 }
 
 generateMetadata().catch((err) => {
