@@ -1,2 +1,2 @@
-import ecLevels from "./ecLevels.json" with { type: "json" };
+import ecLevels from "./ecLevels.json" assert { type: "json" };
 export default ecLevels;
