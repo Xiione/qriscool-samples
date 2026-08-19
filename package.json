@@ -4,22 +4,25 @@
   "description": "",
   "type": "module",
   "main": "index.js",
+  "engines": {
+    "node": ">=20.19"
+  },
   "exports": {
     ".": "./index.js"
   },
   "scripts": {
     "generate": "node ./generate.mjs",
-    "build": "tsc ./index.ts ./generate.ts --target es2022 --module es2022 --moduleResolution bundler --declaration true --declarationDir ."
+    "build": "tsc ./index.ts --target esnext --module esnext --moduleResolution bundler --declaration true --declarationDir ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "canvas": "^3.0.1",
+    "canvas": "^3.2.1",
     "jsqr-es6": "github:Xiione/jsQR"
   },
   "devDependencies": {
-    "@types/node": "^22.10.5",
-    "typescript": "^5.7.2"
+    "@types/node": "^25.1.0",
+    "typescript": "^5.9.3"
   }
 }
